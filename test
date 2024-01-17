@@ -1,0 +1,54 @@
+C:\Users\Admin>you-get https://www.bilibili.com/video/BV1Ci4y1q7jr --debug
+[DEBUG] get_content: https://www.bilibili.com/video/BV1Ci4y1q7jr
+[DEBUG] get_content: https://www.bilibili.com/video/BV1Ci4y1q7jr
+[DEBUG] get_content: https://interface.bilibili.com/v2/playurl?appkey=iVGUTjsxvpLeuDCf&cid=1398052000&otype=json&qn=120&quality=120&type=&sign=d4f891b8cd149a7fc09b37ed2dc074f0
+[DEBUG] HTTP Error with code502
+[DEBUG] HTTP Error with code504
+[DEBUG] HTTP Error with code504
+you-get: version 0.4.1650, a tiny downloader that scrapes the web.
+you-get: Namespace(version=False, help=False, info=False, url=False, json=False, no_merge=False, no_caption=False, postfix=False, force=False, skip_existing_file_size_check=False, format=None, output_filename=None, output_dir='.', player=None, cookies=None, timeout=600, debug=True, input_file=None, password=None, playlist=False, first=None, last=None, size=None, auto_rename=False, insecure=False, http_proxy=None, extractor_proxy=None, no_proxy=False, socks_proxy=None, stream=None, itag=None, m3u8=False, URL=['https://www.bilibili.com/video/BV1Ci4y1q7jr'])
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\Scripts\you-get.exe\__main__.py", line 7, in <module>
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\you_get\__main__.py", line 92, in main
+    main(**kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\you_get\common.py", line 1870, in main
+    script_main(any_download, any_download_playlist, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\you_get\common.py", line 1762, in script_main
+    download_main(
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\you_get\common.py", line 1382, in download_main
+    download(url, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\you_get\common.py", line 1861, in any_download
+    m.download(url, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\you_get\extractor.py", line 48, in download_by_url
+    self.prepare(**kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\you_get\extractors\bilibili.py", line 276, in prepare
+    api_content = get_content(api_url, headers=self.bilibili_headers(referer=self.url))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\you_get\common.py", line 477, in get_content
+    response = urlopen_with_retry(req)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\you_get\common.py", line 446, in urlopen_with_retry
+    raise http_error
+  File "C:\Users\Admin\AppData\Roaming\Python\Python312\site-packages\you_get\common.py", line 437, in urlopen_with_retry
+    return request.urlopen(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\urllib\request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\urllib\request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\urllib\request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\urllib\request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 504: Gateway Time-out
